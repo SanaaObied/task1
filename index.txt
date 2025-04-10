@@ -23,3 +23,43 @@ True
 
 4. What does the -u flag in the git push -u origin main command signify, and how does it impact later usage of git push and git pull?
 The -u flag sets the remote (e.g., origin) and branch (e.g., main) as the default upstream for the current local branch. After this setup, you can use git push or git pull without specifying the remote and branch names again.
+
+Practical Part: Connect Local Git Repo to GitHub Using SSH
+here are two ways to connect Git to GitHub: HTTPS ,SSH (Secure Shell)
+
+For this task, I used SSH to connect my local Git repository to GitHub.
+✅ Steps and Commands
+1. Check if you already have SSH keys
+ls -al ~/.ssh
+2. Create a new SSH key (if you don’t have one)
+ssh-keygen -t ed25519 -C "your_email@example.com"
+*Press Enter to accept the default path
+*This creates a private and public key
+
+3. Start SSH agent and add the key
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+4. Copy the SSH key
+cat ~/.ssh/id_ed25519.pub
+*Copy the entire output
+
+5. Add SSH key to GitHub
+*Go to GitHub → Settings → SSH and GPG keys
+*Click “New SSH key”
+*Paste the copied key and save
+
+6. Create a new repo on GitHub
+*Go to GitHub → Click “New”
+*Name it (e.g. my-ssh-repo) → Click Create repository
+
+7. Create a local folder and init Git
+mkdir my-ssh-repo
+cd my-ssh-repo
+git init
+8. Add GitHub repo as remote using SSH
+git remote add origin git@github.com:your-username/my-ssh-repo.git
+9. Add a file and push
+echo "# My SSH Repo" > README.md
+git add README.md
+git commit -m "First commit"
+git push -u origin main
