@@ -1,0 +1,25 @@
+1. Explain the purpose of the following Git commands:
+a. git status: Checks the status of files in the working directory and staging area. It shows which files are modified, staged, or untracked.
+
+b. git init: Initializes an empty local Git repository in the current directory.
+
+c. git commit: Creates a new commit with all files that have been staged using git add. It saves a snapshot of the staged changes.
+
+d. git push: Uploads local commits to the remote repository, making them available to others.
+
+2. Ahmed claims that there is no need for the git add command and suggests committing changes directly from the working directory. Do you agree?
+I disagree with Ahmed. The git add command is important because it allows you to choose which changes to include in your next commit. Without it, you can't selectively commit specific files or changes. It also separates the working directory from the staging area, which helps in reviewing changes before committing.
+
+3. Answer the following questions about code hosting providers:
+a. List two popular code hosting platforms besides GitHub: GitLab , Bitbucket
+
+b. What key features do code hosting providers offer to enhance version control for both individual developers and collaborative development environments?
+They provide features like:
+
+Remote repositories ,Pull requests / merge requests ,Branch management , Issue tracking , Continuous integration and deployment (CI/CD) , Access control and permissions
+
+c. True or False: A team can collaborate on a software project without relying on popular code hosting providers by setting up their own self-hosted server for version control.
+True
+
+4. What does the -u flag in the git push -u origin main command signify, and how does it impact later usage of git push and git pull?
+The -u flag sets the remote (e.g., origin) and branch (e.g., main) as the default upstream for the current local branch. After this setup, you can use git push or git pull without specifying the remote and branch names again.
